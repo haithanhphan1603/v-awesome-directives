@@ -1,5 +1,5 @@
 
-# 🦙⚡😎 v-awesome-directive 🦙⚡😎
+# 🦙⚡😎 v-awesome-directives 🦙⚡😎
 
 v-awesome-directive is a collection of essential custom directives for Vue.js 3 applications. These directives enhance your application's functionality and provide convenient solutions for common use cases.
 Current supported directives:
