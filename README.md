@@ -1,45 +1,106 @@
 # v-awesome-directive
 
-This template should help get you started developing with Vue 3 in Vite.
+`v-awesome-directive` is a collection of highly useful custom directives for Vue 3 applications. It provides a set of directives that can enhance the functionality and user experience of your Vue.js projects.
 
-## Recommended IDE Setup
+## Installation
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+You can install the package via npm or yarn:
 
-## Type Support for `.vue` Imports in TS
+```bash
+# With npm
+npm install v-awesome-directive
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+# With Yarn
+yarn add v-awesome-directive
 ```
 
-### Compile and Hot-Reload for Development
+## Usage
 
-```sh
-npm run dev
+Import the directives you need in your Vue component and register them as custom directives:
+
+```js
+import { vFocus, vClickOutside, vSticky } from 'v-awesome-directive'
+
+export default {
+  directives: {
+    focus: vFocus,
+    clickOutside: vClickOutside,
+    sticky: vSticky
+  }
+  // ...
+}
 ```
 
-### Type-Check, Compile and Minify for Production
+Then, you can use the directives in your Vue template:
 
-```sh
-npm run build
+```html
+<template>
+  <input type="text" v-focus />
+  <div v-click-outside="handleClickOutside">
+    <!-- content -->
+  </div>
+  <div v-sticky="{ top: 50 }">
+    <!-- sticky content -->
+  </div>
+</template>
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Directives
 
-```sh
-npm run test:unit
+### `v-focus`
+
+The `v-focus` directive automatically focuses on the associated element when the component is mounted or the directive expression evaluates to `true`.
+
+**Usage**
+
+```html
+<input type="text" v-focus />
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### `v-click-outside`
 
-```sh
-npm run lint
+The `v-click-outside` directive calls a specified function when the user clicks outside of the associated element. This is useful for closing dropdowns, modals, or other UI components when the user clicks outside of them.
+
+**Usage**
+
+```html
+<div v-click-outside="handleClickOutside">
+  <!-- content -->
+</div>
 ```
+
+```js
+export default {
+  methods: {
+    handleClickOutside() {
+      // Handle click outside logic
+    }
+  }
+}
+```
+
+### `v-sticky`
+
+The `v-sticky` directive makes an element sticky (position: sticky) based on the provided options. It accepts an object with `top` and `bottom` properties, representing the offset from the top and bottom of the viewport, respectively.
+
+**Usage**
+
+```html
+<div v-sticky="{ top: 50 }">
+  <!-- sticky content -->
+</div>
+```
+
+```html
+<div v-sticky="{ bottom: 20 }">
+  <!-- sticky content -->
+</div>
+```
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to add new features, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
