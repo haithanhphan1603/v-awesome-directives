@@ -4,11 +4,9 @@
 v-awesome-directive is a collection of essential custom directives for Vue.js 3 applications. These directives enhance your application's functionality and provide convenient solutions for common use cases.
 Current supported directives:
 
-✅ v-focus
-
-✅ v-sticky
-
-✅ v-click-outside
+#### ✅ v-focus
+#### ✅ v-sticky
+#### ✅ v-click-outside
 
 
 ## Installation
@@ -59,19 +57,14 @@ Then, you can use the directives in your Vue components like any other built-in 
 
 ### v-focus
 
-The `v-focus` directive automatically focuses the associated input element when the component is mounted or when a specific event is triggered.
+The `v-focus` directive automatically focuses the associated input element when the component is mounted.
 
 #### Usage
 
 ```html
 <input v-focus />
-<!-- or -->
-<input v-focus="{ event: 'custom-event' }" />
 ```
 
-#### Options
-
-- `event` (optional): A custom event name to trigger the focus. If not provided, the directive will focus the element when the component is mounted.
 
 ### v-click-outside
 
