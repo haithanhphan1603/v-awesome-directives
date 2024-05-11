@@ -1,6 +1,8 @@
-# v-awesome-directive
+Sure, here's a detailed and concise README file for the `v-awesome-directive` GitHub repository:
 
-`v-awesome-directive` is a collection of highly useful custom directives for Vue 3 applications. It provides a set of directives that can enhance the functionality and user experience of your Vue.js projects.
+# 🦙⚡😎 v-awesome-directive 🦙⚡😎
+
+`v-awesome-directive` is a collection of essential custom directives for Vue.js 3 applications. These directives enhance your application's functionality and provide convenient solutions for common use cases.
 
 ## Installation
 
@@ -16,90 +18,90 @@ yarn add v-awesome-directive
 
 ## Usage
 
-Import the directives you need in your Vue component and register them as custom directives:
+Import the desired directives from the package and register them in your Vue application:
 
 ```js
+import { createApp } from 'vue'
+import App from './App.vue'
 import { vFocus, vClickOutside, vSticky } from 'v-awesome-directive'
 
-export default {
-  directives: {
-    focus: vFocus,
-    clickOutside: vClickOutside,
-    sticky: vSticky
-  }
-  // ...
-}
+const app = createApp(App)
+
+app.directive('focus', vFocus)
+app.directive('click-outside', vClickOutside)
+app.directive('sticky', vSticky)
+
+app.mount('#app')
 ```
 
-Then, you can use the directives in your Vue template:
+Then, you can use the directives in your Vue components like any other built-in directive:
 
 ```html
 <template>
-  <input type="text" v-focus />
+  <input v-focus />
   <div v-click-outside="handleClickOutside">
-    <!-- content -->
+    <!-- Content -->
   </div>
-  <div v-sticky="{ top: 50 }">
-    <!-- sticky content -->
+  <div v-sticky>
+    <!-- Sticky content -->
   </div>
 </template>
 ```
 
 ## Directives
 
-### `v-focus`
+### v-focus
 
-The `v-focus` directive automatically focuses on the associated element when the component is mounted or the directive expression evaluates to `true`.
+The `v-focus` directive automatically focuses the associated input element when the component is mounted or when a specific event is triggered.
 
-**Usage**
+#### Usage
 
 ```html
-<input type="text" v-focus />
+<input v-focus />
+<!-- or -->
+<input v-focus="{ event: 'custom-event' }" />
 ```
 
-### `v-click-outside`
+#### Options
 
-The `v-click-outside` directive calls a specified function when the user clicks outside of the associated element. This is useful for closing dropdowns, modals, or other UI components when the user clicks outside of them.
+- `event` (optional): A custom event name to trigger the focus. If not provided, the directive will focus the element when the component is mounted.
 
-**Usage**
+### v-click-outside
+
+The `v-click-outside` directive allows you to detect clicks outside of a specific element. It's useful for closing modals, dropdowns, or any other UI components that should be dismissed when clicking outside their boundaries.
+
+#### Usage
 
 ```html
 <div v-click-outside="handleClickOutside">
-  <!-- content -->
+  <!-- Content -->
 </div>
 ```
 
-```js
-export default {
-  methods: {
-    handleClickOutside() {
-      // Handle click outside logic
-    }
-  }
-}
-```
+#### Arguments
 
-### `v-sticky`
+- `handleClickOutside`: A function that will be called when a click occurs outside the target element.
 
-The `v-sticky` directive makes an element sticky (position: sticky) based on the provided options. It accepts an object with `top` and `bottom` properties, representing the offset from the top and bottom of the viewport, respectively.
+### v-sticky
 
-**Usage**
+The `v-sticky` directive makes an element sticky (position: sticky) based on the specified offset and viewport boundaries.
+
+#### Usage
 
 ```html
-<div v-sticky="{ top: 50 }">
-  <!-- sticky content -->
+<div v-sticky="{ top: 50, bottom: 20 }">
+  <!-- Sticky content -->
 </div>
 ```
 
-```html
-<div v-sticky="{ bottom: 20 }">
-  <!-- sticky content -->
-</div>
-```
+#### Options
+
+- `top` (optional): The top offset value for the sticky positioning.
+- `bottom` (optional): The bottom offset value for the sticky positioning.
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or want to add new features, please open an issue or submit a pull request.
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/haithanhphan1603/v-awesome-directive).
 
 ## License
 
