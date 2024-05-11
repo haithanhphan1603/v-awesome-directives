@@ -1,10 +1,10 @@
-import type { DirectiveBinding, VNode } from 'vue'
+import type { Directive, DirectiveBinding, VNode } from 'vue'
 
 interface BindingElement extends HTMLElement {
   clickOutside: (e: MouseEvent) => void
 }
 
-export const vClickOutside = {
+export const vClickOutside: Directive = {
   mounted: (el: BindingElement, binding: DirectiveBinding, vnode: VNode) => {
     const callback = binding.value
     el.clickOutside = (e: MouseEvent) => {
