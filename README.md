@@ -1,7 +1,11 @@
 
 # 🦙⚡😎 v-awesome-directive 🦙⚡😎
 
-`v-awesome-directive` is a collection of essential custom directives for Vue.js 3 applications. These directives enhance your application's functionality and provide convenient solutions for common use cases.
+`v-awesome-directive` is a collection of essential custom directives for Vue.js 3 applications. These directives enhance your application's functionality and provide convenient solutions for common use cases. 
+Current supported directives: 
+✅ v-focus
+✅ v-sticky
+✅ v-click-outside
 
 ## Installation
 
