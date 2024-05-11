@@ -1,4 +1,3 @@
-Sure, here's a detailed and concise README file for the `v-awesome-directive` GitHub repository:
 
 # 🦙⚡😎 v-awesome-directive 🦙⚡😎
 
