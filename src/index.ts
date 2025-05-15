@@ -1,3 +1,1 @@
-import DirectivesPlugin from "./directives";
-
-export default DirectivesPlugin;
+export * from "./directives";

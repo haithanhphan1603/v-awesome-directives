@@ -1,12 +1,4 @@
-import { App } from "vue";
-import vClickOutside from "./v-click-outside";
-import vFocus from "./v-focus";
-import vDebounce from "./v-debounce";
-
-export default {
-  install(app: App) {
-    app.directive("click-outside", vClickOutside);
-    app.directive("focus", vFocus);
-    app.directive("debounce", vDebounce);
-  },
-};
+export { default as vClickOutside } from "./v-click-outside";
+export { default as vFocus } from "./v-focus";
+export { default as vDebounce } from "./v-debounce";
+export { default as vTooltip } from "./v-tooltip";
